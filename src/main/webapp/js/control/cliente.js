@@ -36,6 +36,7 @@ var control_cliente_list = function(path) {
     }
 
     function loadModalForm(view, place, id, action) {
+
         cabecera = '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>';
         if (action == "edit") {
             cabecera += '<h3 id="myModalLabel">Edición de ' + view.getObject().getName() + "</h3>";
@@ -237,7 +238,7 @@ var control_cliente_list = function(path) {
             });
 
             //boton de crear un nuevo elemento
-            
+
             $(prefijo_div + '#crear').unbind('click');
             $(prefijo_div + '#crear').click(function() {
                 loadModalForm(view, '#modal01', $(this).attr('id'));

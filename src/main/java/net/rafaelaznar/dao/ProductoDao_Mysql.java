@@ -12,6 +12,7 @@ import net.rafaelaznar.helper.Conexion;
 import net.rafaelaznar.helper.FilterBean;
 import net.rafaelaznar.bean.ProductoBean;
 
+
 public class ProductoDao_Mysql implements ProductoDao {
 
     private final MysqlData oMysql;
