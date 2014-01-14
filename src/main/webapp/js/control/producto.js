@@ -148,7 +148,7 @@ var control_producto_list = function(path) {
             return o;
         };
         var jsonObj = [];
-        jsonObj = $(prefijo_div + '#productoForm').serializeObject(); //#formulario
+        jsonObj = $(prefijo_div + '#productoForm').serializeObject();
         jsonfile = {json: JSON.stringify(jsonObj)};
         cabecera = "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>" + "<h3 id=\"myModalLabel\">Respuesta del servidor</h3>";
         pie = "<button class=\"btn btn-primary\" data-dismiss=\"modal\" aria-hidden=\"true\">Cerrar</button>";
@@ -286,11 +286,14 @@ var control_producto_list = function(path) {
             });
 
             //boton de crear un nuevo elemento
-
-            $(prefijo_div + '#crear').unbind('click');
-            $(prefijo_div + '#crear').click(function() {
-                loadModalForm(view, '#modal01', $(this).attr('id'));
-            });
+            if (callback) {
+                $(prefijo_div + '#crear').css("display", "none");
+            } else {
+                $(prefijo_div + '#crear').unbind('click');
+                $(prefijo_div + '#crear').click(function() {
+                    loadModalForm(view, prefijo_div + '#modal01', $(this).attr('id'));
+                });
+            }
 
 
 
