@@ -48,9 +48,9 @@
             </div>
         </div> 
 
-        
-        
-        
+
+
+
         <div class="control-group">
             <label class="control-label" for="codigo">Cantidad: </label>
             <div class="controls">
@@ -58,14 +58,18 @@
             </div>
         </div>
 
-
+        <!--
+                <div class="control-group">
+                    <label class="control-label" for="descripcion">Fecha: </label> 
+                    <div class="controls">
+                        <input id="fecha" name="fecha" type="date" size="30" maxlength="50" value="" /> 
+                    </div>
+                </div>
+        -->    
         <div class="control-group">
-            <label class="control-label" for="descripcion">Fecha: </label> 
-            <div class="controls">
-                <input id="fecha" name="fecha" type="date" size="30" maxlength="50" value="" /> 
-            </div>
+            <label class="control-label" for="descripcion">Fecha: </label>
+            <input type="date" id="datepicker" name="fecha" value="">
         </div>
-        
 
         <div class="control-group">
             <div class="controls">

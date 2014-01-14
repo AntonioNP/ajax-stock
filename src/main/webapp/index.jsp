@@ -16,7 +16,7 @@
         <title>Ajax Stock</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">      
         <style>
             body {
                 padding-top: 60px;
@@ -31,7 +31,10 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
+        <!-- Librerías de jquery y CSS para el calendario -->
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>

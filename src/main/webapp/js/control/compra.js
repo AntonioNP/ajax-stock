@@ -371,6 +371,12 @@ var control_compra_list = function(path) {
                 rpp = $(prefijo_div + "#rpp option:selected").text();
                 thisObject.inicia(view, pag, order, ordervalue, rpp, filter, filteroperator, filtervalue, callback, systemfilter, systemfilteroperator, systemfiltervalue);
             });
+
+            // Función para el calendario de jquery:
+
+            $(function() {
+                $("#datepicker").datepicker();
+            });
         }
     };
 };
