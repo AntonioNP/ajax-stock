@@ -61,18 +61,24 @@ public class ControlJsp extends HttpServlet {
             //servimos el jsp aislado
             response.setContentType("text/html; charset=UTF-8");
             getServletContext().getRequestDispatcher("/jsp/" + ob + "/" + op + ".jsp").forward(request, response);
-        } else {
-            //procesamos la autenticación
             if (ob.equalsIgnoreCase("usuario")) {
                 if (op.equalsIgnoreCase("login02")) {
                     UsuarioBean oUsuario = new UsuarioBean();
-                    oUsuario.setLogin(request.getParameter("login"));
-                    oUsuario.setPassword(request.getParameter("password"));
-                    UsuarioDao_Mysql oUsuarioDao = new UsuarioDao_Mysql(Conexion.getConection());
-                    oUsuario = oUsuarioDao.getFromLogin(oUsuario);
-                    if (oUsuario.getId() != 0) {
-                        oUsuario = oUsuarioDao.get(oUsuario);
-                        request.getSession().setAttribute("usuarioBean", oUsuario);
+
+                    String login = request.getParameter("login");
+                    String pass = request.getParameter("password");
+
+                    if (!login.equals("") && !pass.equals("")) {
+                        oUsuario.setLogin(login);
+                        oUsuario.setPassword(pass);
+                        UsuarioDao_Mysql oUsuarioDao = new UsuarioDao_Mysql(Conexion.getConection());
+                        oUsuario = oUsuarioDao.getFromLogin(oUsuario);
+                        if (oUsuario.getId() != 0) {
+                            oUsuario = oUsuarioDao.get(oUsuario);
+                            if (oUsuario.getLogin().equals(login) && oUsuario.getPassword().equals(pass)) {
+                                request.getSession().setAttribute("usuarioBean", oUsuario);
+                            }
+                        }
                     }
                 }
                 if (op.equalsIgnoreCase("logout")) {
