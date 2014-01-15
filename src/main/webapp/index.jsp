@@ -16,7 +16,7 @@
         <title>Ajax Stock</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">      
         <style>
             body {
                 padding-top: 60px;

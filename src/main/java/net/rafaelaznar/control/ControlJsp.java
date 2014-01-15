@@ -61,8 +61,6 @@ public class ControlJsp extends HttpServlet {
             //servimos el jsp aislado
             response.setContentType("text/html; charset=UTF-8");
             getServletContext().getRequestDispatcher("/jsp/" + ob + "/" + op + ".jsp").forward(request, response);
-        } else {
-            //procesamos la autenticación
             if (ob.equalsIgnoreCase("usuario")) {
                 if (op.equalsIgnoreCase("login02")) {
                     UsuarioBean oUsuario = new UsuarioBean();
